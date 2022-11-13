@@ -41,7 +41,7 @@ function updateFilters() {
 
     // 5. If a filter value was entered then add that filterId and value
     // to the filters list. Otherwise, clear that filter from the filters object.
-    if (changed_val){
+    if (changed_val !== undefined){
       filters[id_val] = changed_val;
     }
     else {
@@ -50,7 +50,7 @@ function updateFilters() {
 
     // 6. Call function to apply all filters and rebuild the table
     filterTable();
-    console.log("updateFilters() end...")
+    console.log("updateFilters() end.")
   }
   
   // 7. Use this function to filter the table when data is entered.
@@ -62,14 +62,14 @@ function updateFilters() {
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
     for(i=0; i<=filteredData.length; i++){
-      for(j=0; j<=5; j++){
-        filteredData = filteredData.filter(row => row.datetime === filters.datetime || row.city === filters.city || row.state === filters.state || row.country === filters.country || row.shape === filters.shape);
+      for(j=0; j <= filters.length; j++){
+        filteredData = filteredData.filter(row => (row.datetime === filters.datetime) || (row.city === filters.city) || (row.state === filters.state) || (row.country === filters.country) || (row.shape === filters.shape));
       }
     }
 
     // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData);
-    console.log("filterTable() end...")
+    console.log("filterTable() end.")
   }
 
   // 2. Attach an event to listen for changes to each filter
