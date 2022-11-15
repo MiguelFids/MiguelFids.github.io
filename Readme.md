@@ -1,4 +1,4 @@
-# Deliverable 2
+# Module 12 Challenge
 
 ## Overview of the Project
 Build a webpage and dynamic table that provides a more in-depth analysis of UFO sightings by allowing users to filter for multiple criteria at the same time.
