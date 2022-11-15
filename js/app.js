@@ -65,12 +65,12 @@ function updateFilters() {
     //   for(j=0; j <= filters.length; j++){
     //     filteredData = filteredData.filter(row => (row.datetime === filters.datetime) || (row.city === filters.city) || (row.state === filters.state) || (row.country === filters.country) || (row.shape === filters.shape));
     //   }
-    // }
-      for(i=0; i <= filters.length; i++){
-        for(j=0; j <= filteredData.length; j++){
-          filteredData = filteredData.filter(row => (row.datetime === filters.datetime) || (row.city === filters.city) || (row.state === filters.state) || (row.country === filters.country) || (row.shape === filters.shape));
-        }
+    // // }
+    for(i=0; i <= filters.length; i++){
+      for(j=0; j <= filteredData.length; j++){
+        filteredData = filteredData.filter(row => (row.datetime === filters.datetime) || (row.city === filters.city) || (row.state === filters.state) || (row.country === filters.country) || (row.shape === filters.shape));
       }
+    };    
 
     // 10. Finally, rebuild the table using the filtered data
     buildTable(filteredData);
